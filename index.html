@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#d8c78e" />
+    <title>Recroder — Live Translator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <section class="recorder" aria-label="复古录音翻译机">
+        <div class="top-ridge" aria-hidden="true"></div>
+
+        <header class="brand-row">
+          <div class="brand">
+            <span class="brand-logo" aria-label="Stepfun logo" role="img">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </span>
+            <div>
+              <h1>STEPFUN RECORDER</h1>
+              <p>simultaneous translator</p>
+            </div>
+          </div>
+          <div class="model">
+            <span class="model-horizontal">RT-2.5-H</span>
+            <span class="model-vertical">RT—2.5-V</span>
+          </div>
+        </header>
+
+        <div class="speaker-panel" aria-hidden="true">
+          <div class="speaker-grille"></div>
+          <span class="speaker-label">FULL RANGE</span>
+        </div>
+
+        <section class="display-shell" aria-label="点阵翻译屏幕">
+          <div class="screen-bezel">
+            <div class="screen">
+              <canvas id="lcd" width="840" height="530">
+                当前浏览器不支持 Canvas。
+              </canvas>
+              <form class="settings-panel" id="settingsPanel" hidden>
+                <div class="settings-title">
+                  <canvas class="bitmap-label" data-text="CONNECTION MENU" aria-hidden="true"></canvas>
+                  <canvas class="bitmap-label" data-text="01/02" aria-hidden="true"></canvas>
+                </div>
+                <label>
+                  <canvas class="bitmap-label" data-text="ENDPOINT" aria-hidden="true"></canvas>
+                  <input
+                    id="endpoint"
+                    type="url"
+                    inputmode="url"
+                    autocomplete="url"
+                    value="wss://api.stepfun.com/v1/realtime"
+                    aria-label="Endpoint"
+                  />
+                </label>
+                <label>
+                  <canvas class="bitmap-label" data-text="API KEY" aria-hidden="true"></canvas>
+                  <input
+                    id="apiKey"
+                    type="password"
+                    autocomplete="off"
+                    placeholder="sk-••••••••••••"
+                    aria-label="API Key"
+                  />
+                </label>
+                <div class="settings-help">
+                  <canvas class="bitmap-label" data-text="MENU: CANCEL" aria-hidden="true"></canvas>
+                  <button type="submit" aria-label="Save">
+                    <canvas class="bitmap-label bitmap-label-invert" data-text="SAVE" aria-hidden="true"></canvas>
+                  </button>
+                </div>
+              </form>
+              <div class="glass-glare" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="screen-caption">
+            <span>DOT MATRIX DISPLAY</span>
+            <span>8 LEVEL GRAY</span>
+          </div>
+        </section>
+
+        <section class="level-meter" aria-label="声音分贝指示器">
+          <div class="meter-window">
+            <div class="voice-indicator" id="voiceIndicator" aria-label="人声检测" aria-live="off">
+              <span class="voice-indicator-light" aria-hidden="true"></span>
+              <span class="voice-indicator-label">VOICE</span>
+            </div>
+            <div class="meter-scale" aria-hidden="true">
+              <span style="--x: 3%">−40</span>
+              <span style="--x: 20%">−24</span>
+              <span style="--x: 40%">−12</span>
+              <span style="--x: 61%">−6</span>
+              <span style="--x: 78%">−3</span>
+              <span style="--x: 94%">0</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-ticks" aria-hidden="true"></div>
+              <div class="meter-needle" id="meterNeedle" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="meter-labels">
+            <span>INPUT LEVEL</span>
+            <span>VU</span>
+          </div>
+        </section>
+
+        <section class="controls" aria-label="录音控制">
+          <button class="utility-button menu-button" id="menuButton" type="button">
+            <span class="menu-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+            <b>MENU</b>
+          </button>
+
+          <div class="history-control">
+            <button
+              class="record-control"
+              id="recordButton"
+              type="button"
+              aria-label="中央开始或暂停录音；停止后点击左右区域查看历史轮次"
+              aria-pressed="false"
+            >
+              <span class="record-ring">
+                <span class="dial-arrow dial-arrow-left" aria-hidden="true">‹</span>
+                <span class="record-dot" aria-hidden="true"></span>
+                <span class="dial-arrow dial-arrow-right" aria-hidden="true">›</span>
+              </span>
+            </button>
+            <b class="history-label">REC / PAUSE</b>
+          </div>
+
+          <div class="stop-stack">
+            <button class="clear-button" id="clearButton" type="button" aria-label="清理历史轮次">
+              <span class="clear-icon" aria-hidden="true"></span>
+              <b>CLEAR</b>
+            </button>
+            <button class="utility-button stop-button" id="stopButton" type="button">
+              <span class="stop-icon" aria-hidden="true"></span>
+              <b>STOP</b>
+            </button>
+          </div>
+        </section>
+
+        <footer class="device-footer">
+          <span>AI TRANSLATION RECORDER</span>
+          <span class="serial">NO. 00483</span>
+        </footer>
+      </section>
+
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

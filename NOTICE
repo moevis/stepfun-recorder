@@ -1,0 +1,15 @@
+# StepFun Recorder notices
+
+This distribution includes WenQuanYi Bitmap Song bitmap font data, licensed
+under the GNU General Public License, version 2 or any later version.
+
+The original font license text is preserved at:
+`fonts/wenquanyi-bitmap-song-COPYING.txt`
+
+The compact `fonts/wenquanyi-bitmap-song.wqbm` bundle is generated from the
+original PCF files with `scripts/build-font-bundle.mjs`. The original PCF
+sources are included in this repository so the bundle can be reproduced.
+
+The application source in this repository is distributed under the GNU GPL
+version 2 or any later version. See `../LICENSE` when viewing the repository
+root, or `LICENSE` on the GitHub Pages branch.
