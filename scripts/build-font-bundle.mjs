@@ -4,10 +4,10 @@
  * Build a compact browser font bundle from one or more original PCF files.
  *
  * Usage:
- *   node recorder/scripts/build-font-bundle.mjs \
- *     --body recorder/fonts/wenquanyi_13px.pcf \
- *     --decor recorder/fonts/wenquanyi_9pt.pcf \
- *     --out recorder/fonts/wenquanyi-bitmap-song.wqbm
+ *   node scripts/build-font-bundle.mjs \
+ *     --body fonts/wenquanyi_13px.pcf \
+ *     --decor fonts/wenquanyi_9pt.pcf \
+ *     --out fonts/wenquanyi-bitmap-song.wqbm
  *
  * The body font keeps every encoded glyph. The decorative font is subset to
  * the characters used by this UI, or to --decor-chars when supplied.
