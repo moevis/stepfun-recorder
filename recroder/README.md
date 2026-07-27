@@ -55,3 +55,11 @@ node recroder/scripts/build-font-bundle.mjs \
 node recroder/scripts/build-font-bundle.mjs \
   --decor-chars "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/"
 ```
+
+## License
+
+StepFun Recorder is distributed under the GNU General Public License, version
+2 or any later version (`GPL-2.0-or-later`). The UI includes WenQuanYi Bitmap
+Song font data under the same license. The original license text is preserved
+in `fonts/wenquanyi-bitmap-song-COPYING.txt`, and the compact bundle can be
+reproduced with the build script above.
