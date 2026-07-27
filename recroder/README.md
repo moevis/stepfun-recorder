@@ -58,8 +58,8 @@ node recroder/scripts/build-font-bundle.mjs \
 
 ## License
 
-StepFun Recorder is distributed under the GNU General Public License, version
-2 or any later version (`GPL-2.0-or-later`). The UI includes WenQuanYi Bitmap
-Song font data under the same license. The original license text is preserved
+StepFun Recorder is distributed under the GNU General Public License version 3
+(`GPL-3.0-only`). The UI includes WenQuanYi Bitmap Song font data under the
+GNU General Public License version 2 or any later version (`GPL-2.0-or-later`). The original license text is preserved
 in `fonts/wenquanyi-bitmap-song-COPYING.txt`, and the compact bundle can be
 reproduced with the build script above.
