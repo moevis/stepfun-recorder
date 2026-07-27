@@ -1,6 +1,12 @@
+
 # Recroder UI
 
 一个独立的复古 Mac 风格录音翻译机 UI 原型。
+
+<img width="1412" height="1496" alt="SCR-20260728-epum" src="https://github.com/user-attachments/assets/bac7d53f-9669-481c-8d78-a49a9c377581" />
+
+<img width="904" height="1650" alt="SCR-20260728-eqaj" src="https://github.com/user-attachments/assets/3be6794a-9eb8-4211-93c8-3e1e90d07606" />
+
 
 ## 预览
 
