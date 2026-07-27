@@ -11,5 +11,5 @@ original PCF files with `scripts/build-font-bundle.mjs`. The original PCF
 sources are included in this repository so the bundle can be reproduced.
 
 The application source in this repository is distributed under the GNU GPL
-version 2 or any later version. See `../LICENSE` when viewing the repository
+version 3. The bundled WenQuanYi font files remain GPL version 2 or later. See `../LICENSE` when viewing the repository
 root, or `LICENSE` on the GitHub Pages branch.
