@@ -1,5 +1,5 @@
 
-# Recroder UI
+# StepFun Recorder
 
 一个独立的复古 Mac 风格录音翻译机 UI 原型。
 
@@ -13,7 +13,7 @@
 在仓库根目录运行：
 
 ```bash
-node recroder/server.mjs
+node recorder/server.mjs
 ```
 
 然后打开终端中显示的本地地址。
@@ -43,22 +43,22 @@ Canvas 文字由浏览器端的 `pcf-font.js` 解析并绘制
 同时只从 9pt 装饰字体中提取本界面实际使用的字符：
 
 ```bash
-node recroder/scripts/build-font-bundle.mjs
+node recorder/scripts/build-font-bundle.mjs
 ```
 
 也可以指定输入和输出：
 
 ```bash
-node recroder/scripts/build-font-bundle.mjs \
+node recorder/scripts/build-font-bundle.mjs \
   --body path/to/body.pcf \
   --decor path/to/decor.pcf \
-  --out recroder/fonts/custom.wqbm
+  --out recorder/fonts/custom.wqbm
 ```
 
 如果需要自定义装饰字体字符集合：
 
 ```bash
-node recroder/scripts/build-font-bundle.mjs \
+node recorder/scripts/build-font-bundle.mjs \
   --decor-chars "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/"
 ```
 

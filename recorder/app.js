@@ -141,14 +141,18 @@ const state = {
   },
 };
 
-const ENDPOINT_STORAGE_KEY = "recroder.endpoint";
-const API_KEY_STORAGE_KEY = "recroder.apiKey";
+const ENDPOINT_STORAGE_KEY = "recorder.endpoint";
+const API_KEY_STORAGE_KEY = "recorder.apiKey";
+const LEGACY_ENDPOINT_STORAGE_KEY = "recroder.endpoint";
+const LEGACY_API_KEY_STORAGE_KEY = "recroder.apiKey";
 const DEFAULT_ENDPOINT = "wss://api.stepfun.com/v1/realtime";
 
 function loadConnectionSettings() {
   try {
-    const storedEndpoint = localStorage.getItem(ENDPOINT_STORAGE_KEY);
-    const storedApiKey = localStorage.getItem(API_KEY_STORAGE_KEY);
+    const storedEndpoint = localStorage.getItem(ENDPOINT_STORAGE_KEY)
+      ?? localStorage.getItem(LEGACY_ENDPOINT_STORAGE_KEY);
+    const storedApiKey = localStorage.getItem(API_KEY_STORAGE_KEY)
+      ?? localStorage.getItem(LEGACY_API_KEY_STORAGE_KEY);
     endpointInput.value = storedEndpoint?.trim() || DEFAULT_ENDPOINT;
     if (storedApiKey !== null) apiKeyInput.value = storedApiKey;
   } catch (error) {
@@ -162,6 +166,8 @@ function saveConnectionSettings() {
   try {
     localStorage.setItem(ENDPOINT_STORAGE_KEY, endpoint);
     localStorage.setItem(API_KEY_STORAGE_KEY, apiKey);
+    localStorage.removeItem(LEGACY_ENDPOINT_STORAGE_KEY);
+    localStorage.removeItem(LEGACY_API_KEY_STORAGE_KEY);
   } catch (error) {
     console.warn("Unable to save connection settings to localStorage", error);
   }
