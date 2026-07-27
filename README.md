@@ -13,7 +13,7 @@
 在仓库根目录运行：
 
 ```bash
-node recorder/server.mjs
+node server.mjs
 ```
 
 然后打开终端中显示的本地地址。
@@ -133,22 +133,22 @@ Canvas 文字由浏览器端的 `pcf-font.js` 解析并绘制
 同时只从 9pt 装饰字体中提取本界面实际使用的字符：
 
 ```bash
-node recorder/scripts/build-font-bundle.mjs
+node scripts/build-font-bundle.mjs
 ```
 
 也可以指定输入和输出：
 
 ```bash
-node recorder/scripts/build-font-bundle.mjs \
+node scripts/build-font-bundle.mjs \
   --body path/to/body.pcf \
   --decor path/to/decor.pcf \
-  --out recorder/fonts/custom.wqbm
+  --out fonts/custom.wqbm
 ```
 
 如果需要自定义装饰字体字符集合：
 
 ```bash
-node recorder/scripts/build-font-bundle.mjs \
+node scripts/build-font-bundle.mjs \
   --decor-chars "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/"
 ```
 
