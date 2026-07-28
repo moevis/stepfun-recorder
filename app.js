@@ -817,13 +817,13 @@ function applyRealtimeEvent(event) {
     finishRealtimeTurnIfReady();
     return;
   }
-  if (event.type === "response.text.delta") {
+  if (event.type === "response.audio_transcript.delta") {
     state.translated += event.delta ?? "";
     state.translationIndex = state.translated.length;
     return;
   }
-  if (event.type === "response.text.done" && !state.translated) {
-    state.translated = event.text ?? "";
+  if (event.type === "response.audio_transcript.done" && !state.translated) {
+    state.translated = event.transcript ?? "";
     state.translationIndex = state.translated.length;
     return;
   }

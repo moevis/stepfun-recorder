@@ -44,7 +44,7 @@ Endpoint 与 API Key 仅保存在浏览器的 `localStorage` 中。点击 REC �
   → input_audio_buffer.append
   → StepFun Realtime API
   ├─ 中文转写：conversation.item.input_audio_transcription.*
-  └─ 英文翻译：response.text.*
+  └─ 英文翻译：response.audio_transcript.*
   → Canvas 同时显示原文与译文
 ```
 
@@ -103,13 +103,13 @@ wss://api.stepfun.com/v1/realtime?model=stepaudio-2.5-realtime
 ```text
 conversation.item.input_audio_transcription.delta
 conversation.item.input_audio_transcription.completed
-response.text.delta
-response.text.done
+response.audio_transcript.delta
+response.audio_transcript.done
 response.done
 ```
 
-转写事件更新中文，响应事件流式追加英文。两部分均完成后，才一起保存为历史
-`Round`，避免事件到达顺序不同导致其中一部分丢失。
+转写事件更新中文，`response.audio_transcript` 事件流式追加英文。两部分均完成后，
+才一起保存为历史 `Round`，避免事件到达顺序不同导致其中一部分丢失。
 
 ### 3. INPUT LEVEL 与 VOICE 灯
 
